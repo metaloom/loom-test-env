@@ -22,12 +22,14 @@ public final class TestEnvHelper {
 	
 	public static ProviderConfig prepareProvider() {
 		ProviderConfig config = new ProviderConfig();
-		config.setProviderHost("saturn");
+		config.setProviderHost("localhost");
 		config.setProviderPort(7543);
 		config.getPostgresql().setPassword("sa");
 		config.getPostgresql().setUsername("sa");
 		config.getPostgresql().setDatabaseName("test");
-		config.getPostgresql().setHost("saturn");
+		config.getPostgresql().setInternalHost("postgresql");
+		config.getPostgresql().setInternalPort(5432);
+		config.getPostgresql().setHost("localhost");
 		config.getPostgresql().setPort(15432);
 		TestDatabaseProvider.localConfig(config);
 		return config;
