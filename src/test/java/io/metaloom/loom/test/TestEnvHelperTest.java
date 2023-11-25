@@ -5,9 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
+
+import io.metaloom.loom.test.data.TestDataCollection;
 
 public class TestEnvHelperTest {
 
@@ -17,9 +20,9 @@ public class TestEnvHelperTest {
 		if (expectedPath.exists()) {
 			FileUtils.deleteDirectory(expectedPath);
 		}
-		Testdata data = TestEnvHelper.prepareTestdata("postfix");
-		assertTrue(data.root().exists());
-		assertEquals(expectedPath.getAbsolutePath(), data.root().getAbsolutePath());
+		TestDataCollection data = TestEnvHelper.prepareTestdata("postfix");
+		assertTrue(Files.exists(data.root()));
+		assertEquals(expectedPath.getAbsolutePath(), data.root().toAbsolutePath());
 	}
 
 }
