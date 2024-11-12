@@ -13,8 +13,8 @@ public class LocalTestData {
 		return Paths.get("/opt/metaloom/loom-testdata");
 	}
 
-	public static Path thumbnailDir() {
-		return Paths.get("/opt/metaloom/loom-thumbnaildir");
+	public static Path metaStorageDir() {
+		return Paths.get("/opt/metaloom/cortex-meta");
 	}
 
 	public static void resetXattr() throws IOException {

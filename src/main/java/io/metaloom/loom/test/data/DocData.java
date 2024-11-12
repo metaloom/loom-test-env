@@ -1,26 +1,33 @@
 package io.metaloom.loom.test.data;
 
-import java.nio.file.Path;
-
 public interface DocData extends TestData {
 
-	default Path sampleTXT() {
-		return root().resolve("folderA/sample.txt");
+	default TestMedia docTXT() {
+		return testMedia("folderA/sample.txt").build();
 	}
 
-	default Path samplePDF() {
-		return root().resolve("folderA/sample.pdf");
+	default TestMedia docPDF() {
+		return testMedia("folderA/sample.pdf").build();
 	}
 
-	default Path sampleDOCX() {
-		return root().resolve("folderA/sample.docx");
+	default TestMedia docDOCX() {
+		return testMedia("folderA/sample.docx")
+			.md5("e63db7208fcc07efe837a0e0343bbe06")
+			.sha256("d23bb8986bcbbed15c80d71164af1deb2c9b5d22e21767bfc4fb2ece50cefe76")
+			.sha512("5580cbaea0066a1fa4a5f5b2aa42c797b10e3936ddf77f6148554c28f99dacfeb5b15148726c106868a0eb4670cabf2790c939d38059e1fd8326f6c0f9f403bd")
+			.build();
 	}
 
-	default Path sampleEPUB() {
-		return root().resolve("folderA/sample.epub");
+	default TestMedia docEPUB() {
+		return testMedia("folderA/sample.epub").build();
 	}
 
-	default Path sampleODT() {
-		return root().resolve("folderA/sample.odt");
+	default TestMedia docODT() {
+		return testMedia("folderA/sample.odt").build();
 	}
+
+	default TestMedia bogusDoc() {
+		return testMedia("folderA/random.doc").build();
+	}
+
 }

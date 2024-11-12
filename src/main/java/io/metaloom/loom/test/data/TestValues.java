@@ -9,7 +9,7 @@ import io.metaloom.utils.hash.SHA256;
 import io.metaloom.utils.hash.SHA512;
 
 public interface TestValues {
-	
+
 	public static final SHA512 SHA512SUM = SHA512.fromString(
 		"dbf5dae6e3825ac5b2b595a37b3945a91bb67e9dad85c1e4ff5c3fdb2948b1100d71dc4e1ebd9a854928c34c5f71a81cd0f258f4652aee3aa2345742177ba3e7");
 
@@ -22,6 +22,8 @@ public interface TestValues {
 	public static final SHA256 SHA256SUM = SHA256.fromString("d7e2763589f1c2f393cc44414c5c7595cd711ba9c3284894227b0304c8c29e57");
 
 	public static final MD5 MD5SUM = MD5.fromString("f29192026939e824b7763507af02c06f");
+
+	public static final MD5 MD5SUM_2 = MD5.fromString("f29192026939e824b7763507af02c06g");
 
 	public static final Instant DATE_OLD = Instant.parse("2018-10-12T14:15:06Z");
 
